@@ -36,7 +36,7 @@
             // if !already a subscription for this handler then add one
             if (!subscriptions
                 .Select(s => s as Subscription<TMessage>)
-                .Any(s => s.Handler == eventHandler))
+                .Any(s => s?.Handler == eventHandler))
             {
                 var newSubscription = new Subscription<TMessage>(eventHandler);
                 subscriptions.Add(newSubscription);
@@ -89,21 +89,5 @@
                 }
             }
         }
-
-        private sealed class Subscription<TMessage> where TMessage : class, IMessage
-        {
-            internal Subscription(Action<TMessage> handler) 
-            {
-                if (handler == null) throw new ArgumentNullException(nameof(handler));
-
-                Token = Guid.NewGuid();
-                Handler = handler;
-            }
-
-            internal Guid Token { get; set; }
-            internal Action<TMessage> Handler { get; set; }
-        }
-    }
-
-    
+    }    
 }
