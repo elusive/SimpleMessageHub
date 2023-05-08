@@ -2,6 +2,6 @@
 {
     public interface IMessage
     {
-        int Id { get; set;  }
+        System.Guid Id { get; }
     }
 }

@@ -1,14 +1,16 @@
 namespace SimpleMessageHub.Tests
 {
+    using SimpleMessageHub.Tests.Shared;
+
     using System;
 
     using Xunit;
 
-    public class MessageHubTests : IDisposable
+    public class MessageBusTests : IDisposable
     {
         private readonly MessageBus _messageHub;
 
-        public MessageHubTests()
+        public MessageBusTests()
         {
             // setup
             _messageHub = MessageBus.Default;
@@ -24,8 +26,8 @@ namespace SimpleMessageHub.Tests
         {
             // arrange
             var handledCount = 0;
-            var msg1 = new TestMessage { Id = 1, Title = "Title1" };
-            var msg2 = new TestMessage { Id = 2, Title = "Title2" };
+            var msg1 = new TestMessage("Title1");
+            var msg2 = new TestMessage("Title2");
             _messageHub.Subscribe((TestMessage m) => handledCount++);
 
             // act
@@ -34,13 +36,6 @@ namespace SimpleMessageHub.Tests
 
             // assert
             Assert.Equal(2, handledCount);
-        }
-
-
-        public class TestMessage : IMessage
-        {
-            public string Title { get; set; }
-            public int Id { get; set; }
         }
     }
 }

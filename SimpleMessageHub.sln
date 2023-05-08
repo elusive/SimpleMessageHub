@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31521.260
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMessageHub", "SimpleMessageHub\SimpleMessageHub.csproj", "{035D06CD-977A-425B-9EC5-72F46F7E1B3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleMessageHub", "SimpleMessageHub\SimpleMessageHub.csproj", "{035D06CD-977A-425B-9EC5-72F46F7E1B3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMessageHub.Tests", "SimpleMessageHub.Tests\SimpleMessageHub.Tests.csproj", "{2EA1633A-6B30-4382-8CAF-94811B8EAFC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleMessageHub.Tests", "SimpleMessageHub.Tests\SimpleMessageHub.Tests.csproj", "{2EA1633A-6B30-4382-8CAF-94811B8EAFC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6FC598F4-3A6F-4DD3-B3E3-65F7D06A1626}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

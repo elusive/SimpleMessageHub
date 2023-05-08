@@ -59,7 +59,7 @@
             {
                 var s = subList
                     .Select(s => s as Subscription<IMessage>)
-                    .FirstOrDefault(s => s.Token == subscriptionToken);
+                    .FirstOrDefault(s => s?.Token == subscriptionToken);
                 if (s != null)
                 {
                     subList.Remove(s);
