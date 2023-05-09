@@ -1,42 +1,37 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
+	  <TargetFrameworks Condition="'$(LibraryFrameworks)'==''">net7.0;net6.0;net35;netstandard2.0</TargetFrameworks>
+	  <TargetFrameworks Condition="'$(LibraryFrameworks)'!=''">$(LibraryFrameworks)</TargetFrameworks>
+	  <LangVersion>9.0</LangVersion>
+	 	  <Nullable>enable</Nullable>
 	<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-	<Title>Simple Message Hub (Pub/Sub)</Title>
-	<Authors>johncgilliland</Authors>
-	<Description>Simple pub/sub message bus library for lightweight aggregated eventing in dotnet applications.</Description>
+	<Title>Simple Message Hub</Title>
+	<Authors>John C. Gilliland</Authors>
+	<Description>Simple pub/sub message bus library for lightweight aggregated events with minimal code.</Description>
 	<Copyright>2019</Copyright>
 	<PackageProjectUrl>https://github.com/elusive/SimpleMessageHub</PackageProjectUrl>
 	<PackageIcon>smh_icon.png</PackageIcon>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
 	<RepositoryUrl>https://github.com/elusive/SimpleMessageHub</RepositoryUrl>
 	<RepositoryType>git</RepositoryType>
-	<PackageReleaseNotes>Initial Release to Nuget.org</PackageReleaseNotes>
-	<AssemblyVersion>0.0.1.0</AssemblyVersion>
-	<FileVersion>0.0.1.0</FileVersion>
+	<PackageReleaseNotes>Package Release to Nuget.org</PackageReleaseNotes>
 	<SignAssembly>False</SignAssembly>
 	<AssemblyOriginatorKeyFile>C:\Users\jgilliland\source\repos\elusive\SimpleMessageHub\SimpleMessageHub.snk</AssemblyOriginatorKeyFile>
 	<IncludeSymbols>True</IncludeSymbols>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<EnableNETAnalyzers>False</EnableNETAnalyzers>
+	<PackageTags>messages; pub; sub; aggregated events; message bus;</PackageTags>
+	<NeutralLanguage>en</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\Assets\smh_icon.png">
+    <None Include="Assets/smh_icon.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Assets\smh_icon.png">
+    <None Include="../README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>

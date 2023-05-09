@@ -43,10 +43,7 @@ using System.Security;
 #endif
 
 
-
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-
-
 [assembly: CLSCompliant(true)]
 
